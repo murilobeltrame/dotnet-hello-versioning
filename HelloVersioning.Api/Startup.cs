@@ -76,7 +76,7 @@ namespace HelloVersioning.Api
             });
         }
 
-        class ConfigureSwaggerOptions : IConfigureOptions<SwaggerGenOptions>
+        public class ConfigureSwaggerOptions : IConfigureOptions<SwaggerGenOptions>
         {
             private readonly IApiVersionDescriptionProvider _provider;
 
