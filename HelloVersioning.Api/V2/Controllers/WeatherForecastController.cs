@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.FeatureManagement;
 using Microsoft.FeatureManagement.Mvc;
 
 namespace HelloVersioning.Api.V2.Controllers
@@ -17,12 +15,6 @@ namespace HelloVersioning.Api.V2.Controllers
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
-        private readonly IFeatureManager _featureManager;
-
-        public WeatherForecastController(IFeatureManager featureManager)
-        {
-            _featureManager = featureManager;
-        }
 
         [HttpGet]
         public IEnumerable<V2.Models.WeatherForecast> Get()
