@@ -37,11 +37,16 @@ namespace HelloVersioning.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
             services.AddFeatureManagement();
+            services.AddAzureAppConfiguration();
+            
             services.AddApiVersioning(options => {
                 options.ReportApiVersions = true;
+                options.AssumeDefaultVersionWhenUnspecified = true;
             });
             services.AddVersionedApiExplorer(options => options.GroupNameFormat = "'v'VVV");
+
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
             services.AddSwaggerGen(options => {
                 options.IncludeXmlComments(XmlCommentsFilePath);
@@ -67,6 +72,8 @@ namespace HelloVersioning.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAzureAppConfiguration();
 
             app.UseAuthorization();
 
