@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "namespaces_mbc_servicebus_name": {
+            "value": null
+        },
+        "systemTopics_AppConfigTestResourceTopic_name": {
+            "value": null
+        },
+        "configurationStores_appconfigtestresource_mbc_name": {
+            "value": null
+        }
+    }
+}
